@@ -1,0 +1,14 @@
+body{
+    box-sizing: border-box;
+    background-color: aquamarine;
+    font-family: 'Courier New', Courier, monospace;
+}
+.div-center{
+    width: 450px;
+    max-width: 450px;
+    margin: auto auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
