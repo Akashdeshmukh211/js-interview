@@ -11,4 +11,12 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#outer{
+    padding: 10px 20px;
+    background-color: rgb(207, 52, 52);
 }
