@@ -398,3 +398,228 @@ fetchData(processData);
 //  it looks up the prototype chain, following the chain of linked objects until
 //  it finds the property or until it reaches the end of
 //   the chain (which is usually the base object, such as Object.prototype)
+
+
+// Asynchronous JavaScript allows code to execute without blocking other operations.
+//  In synchronous programming, one operation must complete before moving on to the next.
+// Asynchronous programming allows tasks to begin, and the code continues running without waiting for the task to finish.
+
+// Async/Await: Introduced in ES8, async/await provides a more readable and cleaner way to write asynchronous code.
+//  async is used to define a function that returns a promise, and await is used to pause the execution of the
+//  function until the promise is resolved.
+
+const fetchData2 = () => {
+    return new Promise((res, reg) => {
+        setTimeout(() => {
+            const data = { result: "some data" };
+            resolve(data)
+        }, 1000);
+    });
+};
+
+const getDate = async () => {
+    try {
+        const result = await fetchData2()
+        console.log(result)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+// Function Declaration
+// A function declaration is defined using the function keyword and
+// can be accessed anywhere within its
+// scope, even before the function is declared due to hoisting.
+// Function Declaration
+function greet1() {
+    return 'Hello!';
+}
+
+// Can be called anywhere in the scope
+console.log(greet1()); // Output: Hello!
+
+
+// Hoisting: Function declarations are hoisted, meaning they can be called before they're defined in the code.
+
+
+// Function Expression:
+
+// A function expression defines a function as part of an expression or a variable assignment.
+//  Function expressions are not hoisted and can only be accessed after they are defined.
+// Function Expression
+const greet2 = function () {
+    return 'Hello!';
+};
+
+// Can only be called after the expression
+console.log(greet2()); // Output: Hello!
+
+// Arrow functions are a concise way to write functions in JavaScript, introduced
+// in ES6 (ECMAScript 2015). They provide a shorter syntax compared to regular
+//  function expressions and offer some unique behavior regarding the this keyword and their structure.
+
+// Lexical this binding: Arrow functions do not have their own this context. Instead, they inherit this from the surrounding code.
+//  In regular functions, this is determined by how the function is called.
+
+// No arguments object: Arrow functions don’t have their own arguments object like regular functions. Instead, they inherit it from the enclosing scope.44
+
+
+// Arrow functions are commonly used for short, concise functions, especially when working with array methods or when a straightforward function is needed. 44
+
+
+// In JavaScript, the this keyword refers to the execution context of a function and represents the context in which a function is executed.
+//  Understanding this is crucial because its value can change based on how a function is called.
+
+// Global Context: When this is used in the global scope or outside of any function, it refers to the global object (window in browsers, global in Node.js).
+console.log(this === window); // In a browser environment, this will be true
+
+// Function Context: Inside a function, this refers to the object on which the function is called. However, this depends on how the function is invoked:
+
+// Function Context: Inside a function, this refers to the object on which the function is called. However, this depends on how the function is invoked:
+
+function greet() {
+    console.log(this === window);
+}
+
+greet(); // Output: true (if running in a browser)
+
+// b. Object Method: When a function is a method of an object, this refers to the object that the method is called on.
+const person = {
+    name: 'Alice',
+    greet: function () {
+        console.log(`Hello, my name is ${this.name}`);
+    }
+};
+
+person.greet(); // Output: Hello, my name is Alice
+
+// c. Explicitly Set this: Using methods like call(), apply(), or bind() allows explicit setting of this.
+
+function introduce(greeting) {
+    console.log(`${greeting}, I'm ${this.name}`);
+}
+
+const john = { name: 'John' };
+introduce.call(john, 'Hi'); // Output: Hi, I'm John
+
+// The call(), apply(), and bind() methods in JavaScript are used to change the context of a function.
+//  This means that you can call a function on a different object than the one it was originally defined on.
+
+// The call() and apply() methods both take the function to be called as their first argument,
+//  and then any number of arguments to be passed to the function. The difference between the two methods is that call()
+//  takes the arguments as a list, while apply() takes them as an array.
+// The bind() method is similar to the call() method, but it does not call the function immediately.
+//  Instead, it returns a new function that can be called later. The new function will have the same context as the original function,
+//   but it can be called on a different object.
+
+// Call the function on a different object
+function greet(name) {
+    console.log(`Hello, ${name}!`);
+}
+
+const person2 = {
+    name: 'John Doe',
+};
+
+greet.call(person2); // Outputs "Hello, John Doe!"
+
+// Apply the function on a different object with an array of arguments
+function add(a, b) {
+    return a + b;
+}
+
+const numbers2 = [1, 2];
+
+add.apply(null, numbers); // Outputs 3
+
+// Bind the function to a different object
+const greetPerson = greet.bind(person);
+
+greetPerson(); // Outputs "Hello, John Doe!"
+
+// In JavaScript, there are several ways to create objects:
+
+// 1. Object Literals
+const personObj = {
+    name: 'Alice',
+    age: 30,
+    greet() {
+        console.log(`Hello, my name is ${this.name}.`);
+    }
+};
+
+// 2. Constructor Functions
+
+function Person2(name, age) {
+    this.name = name;
+    this.age = age;
+    this.greet = function () {
+        console.log(`Hello, my name is ${this.name}.`);
+    };
+}
+
+const alice1 = new Person2('Alice', 30);
+
+// 3. Object.create()
+
+const personProto = {
+    greet() {
+        console.log(`Hello, my name is ${this.name}.`);
+    }
+};
+
+const alice2 = Object.create(personProto);
+alice.name = 'Alice';
+alice.age = 30;
+
+// ES6 Classes
+
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    greet() {
+        console.log(`Hello, my name is ${this.name}.`);
+    }
+}
+
+const alice = new Person('Alice', 30);
+
+
+// ES6, also known as ECMAScript 2015, introduced a wide range of new features and improvements to JavaScript. Some of the notable features include:
+
+// 1. **Arrow Functions**: Concise syntax for writing functions.
+   
+// 2. **let and const**: Block-scoped variables (`let`) and constants (`const`) which offer more predictable scope behavior.
+
+// 3. **Template Literals**: Using backticks (`) to create multi-line strings and interpolate variables within strings.
+
+// 4. **Destructuring Assignment**: Easily extract array elements or object properties into variables.
+
+// 5. **Default Parameters**: Assign default values to function parameters.
+
+// 6. **Rest and Spread Operators**: `...` used for gathering/rest parameters or spreading elements.
+
+// 7. **Classes**: Introduced a more natural way to define classes and inheritance.
+
+// 8. **Modules**: Native support for modules using `import` and `export`.
+
+// 9. **Promises**: Built-in support for promises, making asynchronous code more manageable.
+
+// 10. **Symbol**: A new primitive data type for creating unique identifiers.
+
+// 11. **Iterators and Generators**: Introduce ways to traverse data structures like arrays.
+
+// 12. **Map and Set Data Structures**: Built-in collections for handling unique keys and values.
+
+// 13. **Enhanced Object Literals**: Additional features in object literals, like shorthand for defining methods and dynamic property names.
+
+// 14. **Typed Arrays**: Arrays with specified data types for handling binary data more efficiently.
+
+// 15. **New Methods for Strings and Arrays**: `startsWith()`, `endsWith()`, `includes()` for strings and `find()`, `findIndex()`, `forEach()` for arrays.
+
+// 16. **Object.assign()**: Merges objects by copying the values of all enumerable own properties from one or more source objects to a target object.
+
+// These are just some of the prominent features introduced in ES6. Subsequent versions of ECMAScript have continued to bring additional improvements and new functionalities to JavaScript.
