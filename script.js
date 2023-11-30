@@ -24,10 +24,10 @@ let f = 10;
 
 // Self - Invoking Function
 {
-    function Selfinvoking(f, l) {
-        console.log(f, l);
-    }
-    Selfinvoking("tect", "interview");
+  function Selfinvoking(f, l) {
+    console.log(f, l);
+  }
+  Selfinvoking("tect", "interview");
 }
 
 // This funtion is a type of function that is invoked or called automatically after its definition
@@ -37,21 +37,21 @@ let f = 10;
 // it is a function that has no name
 // These function are declared dynamically at runtime using the function operator
 // To call this function we need to use variable or property along with();
-let fun = function () {
-    console.log("js interview");
+let fun = function() {
+  console.log("js interview");
 };
 fun();
 
 // Print middle character of a string even string both middle value and odd string middle value only
 
 function getMidddleValue(str) {
-    const L = str.length;
-    const M = parseInt(L / 2);
-    if (L % 2 === 0) {
-        console.log(str[M - 1], str[M]);
-    } else {
-        console.log(str[M]);
-    }
+  const L = str.length;
+  const M = parseInt(L / 2);
+  if (L % 2 === 0) {
+    console.log(str[M - 1], str[M]);
+  } else {
+    console.log(str[M]);
+  }
 }
 let astr = "deshmukh";
 getMidddleValue(astr);
@@ -62,11 +62,11 @@ getMidddleValue(astr);
 // returning their inner function simultaneously
 
 function getCurrin(a) {
-    return function (b) {
-        return function (c) {
-            return a + b + c;
-        };
+  return function(b) {
+    return function(c) {
+      return a + b + c;
     };
+  };
 }
 console.log(getCurrin(2)(4)(9));
 
@@ -75,11 +75,11 @@ console.log(getCurrin(2)(4)(9));
 // reference even after it is executed is called closure
 
 function getName() {
-    const n = "js";
-    function displayFM() {
-        console.log(n);
-    }
-    return displayFM;
+  const n = "js";
+  function displayFM() {
+    console.log(n);
+  }
+  return displayFM;
 }
 let clo = getName();
 clo();
@@ -113,18 +113,18 @@ const element = 3;
 // if element is get it will return index of that element
 // else it return -1
 if (array.indexOf(element) !== -1) {
-    console.log(`${element} exists in the array.`);
+  console.log(`${element} exists in the array.`);
 } else {
-    console.log(`${element} does not exist in the array.`);
+  console.log(`${element} does not exist in the array.`);
 }
 
 // Using includes (introduced in ES2016)
 // console.log(array.includes(element))
 //if element is found in the array it will return true else it will return false
 if (array.includes(element)) {
-    console.log(`${element} exists in the array.`);
+  console.log(`${element} exists in the array.`);
 } else {
-    console.log(`${element} does not exist in the array.`);
+  console.log(`${element} does not exist in the array.`);
 }
 
 const found = array.find(item => item === element);
@@ -134,29 +134,29 @@ const found = array.find(item => item === element);
 // If no element satisfies the condition, find() returns undefined.
 
 if (found !== undefined) {
-    console.log(`${element} exists in the array.`);
+  console.log(`${element} exists in the array.`);
 } else {
-    console.log(`${element} does not exist in the array.`);
+  console.log(`${element} does not exist in the array.`);
 }
 
 const exists = array.some(item => item === element);
 // The some() method returns true
 // if at least one element satisfies the condition (item > 3). Otherwise, it returns false.
 if (exists) {
-    console.log(`${element} exists in the array.`);
+  console.log(`${element} exists in the array.`);
 } else {
-    console.log(`${element} does not exist in the array.`);
+  console.log(`${element} does not exist in the array.`);
 }
 
 // How to search an element in array using linear search
 
 function linearSearch(arr, target) {
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === target) {
-            return i; // Return the index of the element if found
-        }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) {
+      return i; // Return the index of the element if found
     }
-    return -1; // Return -1 if the element is not found in the array
+  }
+  return -1; // Return -1 if the element is not found in the array
 }
 
 const myArray = [3, 7, 1, 4, 9, 2];
@@ -165,9 +165,9 @@ const elementToFind = 4;
 const result = linearSearch(myArray, elementToFind);
 
 if (result !== -1) {
-    console.log(`Element ${elementToFind} found at index ${result}.`);
+  console.log(`Element ${elementToFind} found at index ${result}.`);
 } else {
-    console.log(`Element ${elementToFind} not found in the array.`);
+  console.log(`Element ${elementToFind} not found in the array.`);
 }
 
 // How to remove duplicate item form array
@@ -182,20 +182,20 @@ console.log(uniqueArray); // [1, 2, 3, 4, 5]
 
 // Using filter() and indexOf():
 const uniqueArrayFilter = arrayWithDuplicates.filter(
-    (item, index) => arrayWithDuplicates.indexOf(item) === index
+  (item, index) => arrayWithDuplicates.indexOf(item) === index
 );
 console.log(uniqueArrayFilter); // [1, 2, 3, 4, 5]
 
 // Using reduce():
 
 const uniqueArrayreduse = arrayWithDuplicates.reduce(
-    (accumulator, currentValue) => {
-        if (!accumulator.includes(currentValue)) {
-            accumulator.push(currentValue);
-        }
-        return accumulator;
-    },
-    []
+  (accumulator, currentValue) => {
+    if (!accumulator.includes(currentValue)) {
+      accumulator.push(currentValue);
+    }
+    return accumulator;
+  },
+  []
 );
 console.log(uniqueArray); // [1, 2, 3, 4, 5]
 
@@ -225,94 +225,90 @@ console.log(numbers); // Output: [22, 15, 3, 1]
 
 // Sorting Objects:
 const items = [
-    { name: "Apple", quantity: 10 },
-    { name: "Orange", quantity: 5 },
-    { name: "Banana", quantity: 8 }
+  { name: "Apple", quantity: 10 },
+  { name: "Orange", quantity: 5 },
+  { name: "Banana", quantity: 8 }
 ];
 
 items.sort((a, b) => a.quantity - b.quantity);
 console.log(items);
 // Output: [{ name: 'Orange', quantity: 5 }, { name: 'Banana', quantity: 8 }, { name: 'Apple', quantity: 10 }]
 
-
-
 function longestConsecutive(nums) {
-    if (nums.length === 0) {
-        return 0;
+  if (nums.length === 0) {
+    return 0;
+  }
+
+  const set = new Set(nums);
+  let longestStreak = 0;
+
+  for (let num of set) {
+    if (!set.has(num - 1)) {
+      let currentNum = num;
+      let currentStreak = 1;
+
+      while (set.has(currentNum + 1)) {
+        currentNum++;
+        currentStreak++;
+      }
+
+      longestStreak = Math.max(longestStreak, currentStreak);
     }
+  }
 
-    const set = new Set(nums);
-    let longestStreak = 0;
-
-    for (let num of set) {
-        if (!set.has(num - 1)) {
-            let currentNum = num;
-            let currentStreak = 1;
-
-            while (set.has(currentNum + 1)) {
-                currentNum++;
-                currentStreak++;
-            }
-
-            longestStreak = Math.max(longestStreak, currentStreak);
-        }
-    }
-
-    return longestStreak;
+  return longestStreak;
 }
 
 const numbersarray = [100, 101, 102, 4, 200, 1, 2, 3, 4, 2];
 const longestLength = longestConsecutive(numbers);
 console.log("Length of the longest consecutive sequence:", longestLength);
 
-
-//   In JavaScript, you can check if a given value is an integer using various methods. 
+//   In JavaScript, you can check if a given value is an integer using various methods.
 //   One common approach is to use the Number.isInteger() method, which was introduced in ECMAScript 6 (ES6).
 
 const num1 = 5;
 const num2 = 5.5;
 function isInteger(value) {
-    return typeof value === 'number' && isFinite(value) && Math.floor(value) === value;
+  return (
+    typeof value === "number" && isFinite(value) && Math.floor(value) === value
+  );
 }
 
 console.log(Number.isInteger(num1)); // Output: true
 console.log(Number.isInteger(num2)); // Output: false
 
-
 // Describe the concept of event bubbling in the dom
 
 // Event bubbling is a key concept in the Document Object Model (DOM)
-//  that describes the order in which event handlers are triggered 
+//  that describes the order in which event handlers are triggered
 //  when an event occurs on a particular element in a web page.
-// When an event happens on a DOM element, like a click on a button 
-// nested within multiple parent elements, that event doesn't just 
+// When an event happens on a DOM element, like a click on a button
+// nested within multiple parent elements, that event doesn't just
 // trigger on the specific element where the event occurred. It also triggers on all of its
 
-document.getElementById("outer").addEventListener("click", function () {
-    console.log("Outer div clicked");
+document.getElementById("outer").addEventListener("click", function() {
+  console.log("Outer div clicked");
 });
 
-document.getElementById("middle").addEventListener("click", function () {
-    console.log("Middle div clicked");
+document.getElementById("middle").addEventListener("click", function() {
+  console.log("Middle div clicked");
 });
 
-document.getElementById("inner").addEventListener("click", function () {
-    console.log("Inner div clicked");
+document.getElementById("inner").addEventListener("click", function() {
+  console.log("Inner div clicked");
 });
 
-document.getElementById("myButton").addEventListener("click", function () {
-    console.log("Button clicked");
+document.getElementById("myButton").addEventListener("click", function() {
+  console.log("Button clicked");
 });
-
 
 //  Promises are a core feature in JavaScript, especially when dealing with asynchronous operations.
 // They're used to handle and manage asynchronous operations in a more manageable
 //  and readable way compared to traditional callback-based approaches.
 
-// Promises in JavaScript represent a placeholder for an asynchronous operation. 
+// Promises in JavaScript represent a placeholder for an asynchronous operation.
 // They are objects that represent the eventual completion or failure
 //  of an asynchronous operation and allow us to handle the result or error once it's available.
-
 
 // Pending: The initial state when the promise is created and the asynchronous operation is in progress.
 // Fulfilled: The state when the asynchronous operation is completed successfully.
@@ -320,7 +316,7 @@ document.getElementById("myButton").addEventListener("click", function () {
 
 // Promises have two main parts:
 
-// Producer: This is the code that performs the asynchronous operation. 
+// Producer: This is the code that performs the asynchronous operation.
 // When the operation completes, it either resolves the promise (fulfillment) or rejects it (failure).
 
 // Consumer: This is the code that handles the result of the asynchronous operation,
@@ -329,62 +325,60 @@ document.getElementById("myButton").addEventListener("click", function () {
 
 // Creating a promise
 const myPromise = new Promise((resolve, reject) => {
-    // Simulating an asynchronous operation
-    setTimeout(() => {
-        const randomNumber = Math.random();
-        if (randomNumber > 0.5) {
-            resolve(randomNumber); // Resolve the promise if the condition is met
-        } else {
-            reject(new Error('Number is too small')); // Reject the promise otherwise
-        }
-    }, 1000);
+  // Simulating an asynchronous operation
+  setTimeout(() => {
+    const randomNumber = Math.random();
+    if (randomNumber > 0.5) {
+      resolve(randomNumber); // Resolve the promise if the condition is met
+    } else {
+      reject(new Error("Number is too small")); // Reject the promise otherwise
+    }
+  }, 1000);
 });
 
 // Consuming the promise
 myPromise
-    .then((result) => {
-        console.log('Promise fulfilled with result:', result);
-    })
-    .catch((error) => {
-        console.error('Promise rejected with error:', error);
-    });
+  .then(result => {
+    console.log("Promise fulfilled with result:", result);
+  })
+  .catch(error => {
+    console.error("Promise rejected with error:", error);
+  });
 
 const MyPromise = new Promise((res, rej) => {
-
-    setTimeout(() => {
-        const ranNum = Math.random();
-        if (ranNum < 0.5) {
-            res(ranNum)
-        } else {
-            rej(new Error('Number is too High'))
-        }
-    }, 1000)
-})
-MyPromise.then((result) => {
-    console.log('Promise fulfilled with result:', result);
-}).catch((error) => {
-    console.error('Promise rejected with error:', error);
-})
+  setTimeout(() => {
+    const ranNum = Math.random();
+    if (ranNum < 0.5) {
+      res(ranNum);
+    } else {
+      rej(new Error("Number is too High"));
+    }
+  }, 1000);
+});
+MyPromise.then(result => {
+  console.log("Promise fulfilled with result:", result);
+}).catch(error => {
+  console.error("Promise rejected with error:", error);
+});
 
 // A callback is a function that is passed as an argument to another function and is
 // intended to be executed after a specific task or event. Callbacks are commonly
 //  used in asynchronous operations to ensure that certain code doesn't run until a particular operation has completed.
 
 function fetchData(callback) {
-    // Simulating an asynchronous operation, like fetching data from a server
-    setTimeout(() => {
-        const data = 'This is the fetched data';
-        callback(data); // Execute the callback function with the fetched data
-    }, 2000);
+  // Simulating an asynchronous operation, like fetching data from a server
+  setTimeout(() => {
+    const data = "This is the fetched data";
+    callback(data); // Execute the callback function with the fetched data
+  }, 2000);
 }
 
 function processData(data) {
-    console.log('Processing data:', data.toUpperCase());
+  console.log("Processing data:", data.toUpperCase());
 }
 
 // Using fetchData with a callback
 fetchData(processData);
-
 
 // Prototypal inheritance is a fundamental concept in JavaScript that describes
 // how objects inherit properties and behaviors from other objects.
@@ -399,7 +393,6 @@ fetchData(processData);
 //  it finds the property or until it reaches the end of
 //   the chain (which is usually the base object, such as Object.prototype)
 
-
 // Asynchronous JavaScript allows code to execute without blocking other operations.
 //  In synchronous programming, one operation must complete before moving on to the next.
 // Asynchronous programming allows tasks to begin, and the code continues running without waiting for the task to finish.
@@ -409,22 +402,22 @@ fetchData(processData);
 //  function until the promise is resolved.
 
 const fetchData2 = () => {
-    return new Promise((res, reg) => {
-        setTimeout(() => {
-            const data = { result: "some data" };
-            resolve(data)
-        }, 1000);
-    });
+  return new Promise((res, reg) => {
+    setTimeout(() => {
+      const data = { result: "some data" };
+      resolve(data);
+    }, 1000);
+  });
 };
 
 const getDate = async () => {
-    try {
-        const result = await fetchData2()
-        console.log(result)
-    } catch (error) {
-        console.log(error)
-    }
-}
+  try {
+    const result = await fetchData2();
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 // Function Declaration
 // A function declaration is defined using the function keyword and
@@ -432,23 +425,21 @@ const getDate = async () => {
 // scope, even before the function is declared due to hoisting.
 // Function Declaration
 function greet1() {
-    return 'Hello!';
+  return "Hello!";
 }
 
 // Can be called anywhere in the scope
 console.log(greet1()); // Output: Hello!
 
-
 // Hoisting: Function declarations are hoisted, meaning they can be called before they're defined in the code.
-
 
 // Function Expression:
 
 // A function expression defines a function as part of an expression or a variable assignment.
 //  Function expressions are not hoisted and can only be accessed after they are defined.
 // Function Expression
-const greet2 = function () {
-    return 'Hello!';
+const greet2 = function() {
+  return "Hello!";
 };
 
 // Can only be called after the expression
@@ -463,9 +454,7 @@ console.log(greet2()); // Output: Hello!
 
 // No arguments object: Arrow functions don’t have their own arguments object like regular functions. Instead, they inherit it from the enclosing scope.44
 
-
 // Arrow functions are commonly used for short, concise functions, especially when working with array methods or when a straightforward function is needed. 44
-
 
 // In JavaScript, the this keyword refers to the execution context of a function and represents the context in which a function is executed.
 //  Understanding this is crucial because its value can change based on how a function is called.
@@ -478,17 +467,17 @@ console.log(this === window); // In a browser environment, this will be true
 // Function Context: Inside a function, this refers to the object on which the function is called. However, this depends on how the function is invoked:
 
 function greet() {
-    console.log(this === window);
+  console.log(this === window);
 }
 
 greet(); // Output: true (if running in a browser)
 
 // b. Object Method: When a function is a method of an object, this refers to the object that the method is called on.
 const person = {
-    name: 'Alice',
-    greet: function () {
-        console.log(`Hello, my name is ${this.name}`);
-    }
+  name: "Alice",
+  greet: function() {
+    console.log(`Hello, my name is ${this.name}`);
+  }
 };
 
 person.greet(); // Output: Hello, my name is Alice
@@ -496,11 +485,11 @@ person.greet(); // Output: Hello, my name is Alice
 // c. Explicitly Set this: Using methods like call(), apply(), or bind() allows explicit setting of this.
 
 function introduce(greeting) {
-    console.log(`${greeting}, I'm ${this.name}`);
+  console.log(`${greeting}, I'm ${this.name}`);
 }
 
-const john = { name: 'John' };
-introduce.call(john, 'Hi'); // Output: Hi, I'm John
+const john = { name: "John" };
+introduce.call(john, "Hi"); // Output: Hi, I'm John
 
 // The call(), apply(), and bind() methods in JavaScript are used to change the context of a function.
 //  This means that you can call a function on a different object than the one it was originally defined on.
@@ -514,18 +503,18 @@ introduce.call(john, 'Hi'); // Output: Hi, I'm John
 
 // Call the function on a different object
 function greet(name) {
-    console.log(`Hello, ${name}!`);
+  console.log(`Hello, ${name}!`);
 }
 
 const person2 = {
-    name: 'John Doe',
+  name: "John Doe"
 };
 
 greet.call(person2); // Outputs "Hello, John Doe!"
 
 // Apply the function on a different object with an array of arguments
 function add(a, b) {
-    return a + b;
+  return a + b;
 }
 
 const numbers2 = [1, 2];
@@ -541,57 +530,56 @@ greetPerson(); // Outputs "Hello, John Doe!"
 
 // 1. Object Literals
 const personObj = {
-    name: 'Alice',
-    age: 30,
-    greet() {
-        console.log(`Hello, my name is ${this.name}.`);
-    }
+  name: "Alice",
+  age: 30,
+  greet() {
+    console.log(`Hello, my name is ${this.name}.`);
+  }
 };
 
 // 2. Constructor Functions
 
 function Person2(name, age) {
-    this.name = name;
-    this.age = age;
-    this.greet = function () {
-        console.log(`Hello, my name is ${this.name}.`);
-    };
+  this.name = name;
+  this.age = age;
+  this.greet = function() {
+    console.log(`Hello, my name is ${this.name}.`);
+  };
 }
 
-const alice1 = new Person2('Alice', 30);
+const alice1 = new Person2("Alice", 30);
 
 // 3. Object.create()
 
 const personProto = {
-    greet() {
-        console.log(`Hello, my name is ${this.name}.`);
-    }
+  greet() {
+    console.log(`Hello, my name is ${this.name}.`);
+  }
 };
 
 const alice2 = Object.create(personProto);
-alice.name = 'Alice';
-alice.age = 30;
+alice2.name = "Alice";
+alice2.age = 30;
 
 // ES6 Classes
 
 class Person {
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-    }
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
 
-    greet() {
-        console.log(`Hello, my name is ${this.name}.`);
-    }
+  greet() {
+    console.log(`Hello, my name is ${this.name}.`);
+  }
 }
 
-const alice = new Person('Alice', 30);
-
+const alice = new Person("Alice", 30);
 
 // ES6, also known as ECMAScript 2015, introduced a wide range of new features and improvements to JavaScript. Some of the notable features include:
 
 // 1. **Arrow Functions**: Concise syntax for writing functions.
-   
+
 // 2. **let and const**: Block-scoped variables (`let`) and constants (`const`) which offer more predictable scope behavior.
 
 // 3. **Template Literals**: Using backticks (`) to create multi-line strings and interpolate variables within strings.
@@ -623,3 +611,206 @@ const alice = new Person('Alice', 30);
 // 16. **Object.assign()**: Merges objects by copying the values of all enumerable own properties from one or more source objects to a target object.
 
 // These are just some of the prominent features introduced in ES6. Subsequent versions of ECMAScript have continued to bring additional improvements and new functionalities to JavaScript.
+
+let z = [];
+let y = [];
+console.log(z == y); // ans is false becuse of memory location
+console.log(z === y); // ans is false becuse of memory location
+
+let s = [];
+let p = s;
+console.log(s == p); // ans is true becuse of memory location is same
+console.log(s === p); // ans is true becuse of memory location is same
+
+let aa = [20];
+let bb = [20];
+console.log(aa[0] == bb[0]); // ans is false becuse of memory location
+console.log(aa[0] === bb[0]);
+
+// What are the different data types in js
+
+// What is the purpose of the 'this' keyword in js
+// thie this keyword refers to the object that is executing the current
+// function or method. it allows access to object properties and methods
+// withing the context of that object
+
+const person3 = {
+  name: "John",
+  greet: function() {
+    console.log("Hello," + this.name);
+  }
+};
+person3.greet();
+
+// What is closures in js
+
+// Closures are function that have access to variables from an outer
+// function even after the outer function has finished executing.
+// They remember the environment in which they were created
+
+function outer() {
+  var outerVar = "Hello";
+  function inner() {
+    console.log(outerVar);
+  }
+  return inner;
+}
+
+var closurefn = outer();
+closurefn();
+
+// What is implicit type coercion in js
+
+// Implicit type coercion is a JavaScript concept that refers to the
+// process of converting a value from one type to another.
+//  If you try to add a string to a number, JavaScript will
+//  implicitly coerce the string to a number before performing
+//  the addition operation.
+var xx = 5;
+var yy = "10";
+
+console.log(xx + yy);
+
+// Explain the concept of prototypes in js
+// Prototypes are a mechanism used by js object for inheritance
+// js object has a prototype, which provides properties and methotds that can be accessed by that object
+
+function Per(name) {
+  this.name = name;
+}
+
+Per.prototype.greetprototye = function() {
+  console.log("Hello," + this.name);
+};
+var p1 = new Per("akash");
+p1.greetprototye();
+
+// How can you clone an object in js
+
+// useing Object.assign()
+// and spread opreators
+
+const obj1 = { name: "akash", age: 30 };
+
+const obj2 = Object.assign({}, obj1);
+
+const obj3 = { ...obj1 };
+
+console.log(obj2);
+console.log(obj3);
+
+// what are higher order function in JS
+
+// Higher order function are function that can accept other function as
+// arguments or return function as their result.
+// 
+
+function multiplyBYTwo(num1, num2) {
+  return num * 2;
+}
+
+function applyOperation(num, operation) {
+  return operation(num);
+}
+
+const resultValue = applyOperation(5, multiplyBYTwo);
+console.log(resultValue);
+
+// What is the purpose of the bind() method in js is
+
+// The bind() method is used to create a new function with a specified
+// this value and an initial set of arguments.
+
+const bindPerson = {
+  name: "John",
+  greet: function() {
+    console.log("hello, ", +this.name);
+  }
+};
+
+const greetfn = bindPerson.greet;
+const boundfn = greetfn.bind(person)
+boundfn()
+
+
+// What are the different types of errors in js
+// - Syntax errors - These errors occur when the js code is not syntactially corret.
+// - Runtime errors - These errore occur when the js code is executed and there is a problem
+// - Logical errore - These errors occur when the js code does not do what is is supposed to do.
+
+
+// What is recursion in js
+// Recursion is a programming technique that allows a functiont to call itself
+//  Recursion can be used to solve a variety of problems, such as finding the factorial of a number or calculation the fibonacci sequence
+
+function factorial(n){
+    if(n === 0){
+        return 1
+    }else{
+        console.log(n)
+        return n * factorial(n - 1)
+    }
+}
+
+const value = factorial(9);
+// console.log(value)
+
+
+// what is the use of a constructor function in js 
+
+// A construnction function is a special type of function that is used to create object.
+// 
+
+function conPerson(name, age){
+    this.name = name
+    this.age = age
+}
+
+
+// what is a callback function in js 
+
+// A callback function is a function passed as an argument to another function,
+//  Which is then invoked inside the outer function. it allows asynchronous or event-drive programming
+
+function fetchValue(callback){
+    setTimeout( function(){
+        const data = 'some data'
+        callback(data);
+    },2000);
+}
+
+function ProcessData(data){
+    console.log('Data received:' + data)
+}
+
+fetchValue(ProcessData)
+
+
+// How do you handle errors in js  
+
+// Errors is js can be handled using try-catch blocks.
+// The try block contains the code that may throw an error, and the
+// catch block handles the error and provides an alternative execution path
+
+
+
+try{
+    throw new Error("Something went wrong")
+}catch(error){
+    console.log('error occurred:' + error.message)
+}
+
+
+// What is the diff between localStorage and sessionStorage in js 
+
+// LocalStorage persists data even after the browser window is closed and is accessible across different browser tabs/windows of the same origin
+
+// sessionStorage stores data for a single browser session and is accessible only within the same tage or window
+
+localStorage.setItem('name','john')
+console.log(localStorage.getItem('name'))
+
+sessionStorage.setItem('name', 'john')
+console.log(sessionStorage.getItem('name'))
+
+
