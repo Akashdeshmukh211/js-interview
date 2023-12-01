@@ -814,3 +814,68 @@ sessionStorage.setItem('name', 'john')
 console.log(sessionStorage.getItem('name'))
 
 
+// what is the purpose of the map() function js
+// the map function is used to iterate over an array and apply a
+// transformation or computation on each element. It returns a new array
+// with the results of the transformation
+
+let numarr = [1,2,4,4,5,5]
+let newArr = numarr.map((num)=>{
+  return num * num
+})
+
+console.log(newArr)
+
+// what is the difference between splice() and slice()
+
+// splice() is used to modify an array by adding, removing or replacing
+// elements at a specific position
+
+// slice() is used to create a new array that contains a portion of an exisition array
+// specified by the starting and ending indices
+
+
+const fruitsvalue = ['apple', 'banana', "orange"]
+fruitsvalue.splice(1,1,'grape')
+console.log(fruitsvalue)
+
+const slicenumarr = numarr.slice(1,4)
+console.log(slicenumarr)
+
+
+//  what is the purpose of the reduce() function js
+
+// The reduce() function is used to reduce an array to a single value
+// by applying a function to each element and accumulating the result
+
+const sumarr = numarr.reduce(function(acc,num){
+  return acc + num 
+},0)
+console.log(sumarr)
+
+// What is the purpose of the fetch () function in js
+//  The fetch() function is used to make asynchronous HTTP requests in js
+//  It returns a Promise that resolves to the response from th server
+
+fetch("url").then((res)=>{
+  return res.json();
+}).catch(function(error){
+  console.log("Error occured: " + error)
+})
+
+
+// What is a generator function in js
+// A generator function is a special type of function that can be paused
+// and resumed during its execution. It allows generating a sequence of values over time,
+// using the yield keyword.
+
+function* generateNumbers(){
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+const generator = generateNumbers();
+console.log(generator.next().value);
+console.log(generator.next().value);
+console.log(generator.next().value);
