@@ -879,3 +879,90 @@ const generator = generateNumbers();
 console.log(generator.next().value);
 console.log(generator.next().value);
 console.log(generator.next().value);
+
+// Prototypes are a mechanism used by JavaScript objects for inheritance.
+//  Every JavaScript object has a prototype, which provides properties and methods that can be accessed by that object.
+// function Personaas(name){
+//     this.name = name
+// }
+// Person.prototype.greet = function (){
+//     console.log("hello" + this.name)  
+// };
+
+// var persons = new Person("akash")
+// persons.greet()
+
+// 15. How can you clone an object in JavaScript?
+// There are multiple ways to clone an object in JavaScript.
+//  One common method is using the Object.assign() method or the spread operator (...).
+
+let obj = { name:  "akash", age: 23}
+console.log(obj)
+
+let q = Object.assign({}, obj)
+console.log(q)
+
+let w = {...obj}
+console.log(w)
+
+// 16. What are higher-order functions in JavaScript?
+// Higher order functions are functions that can accept other functions as arguments 
+// or return functions as their results. They enable powerful functional programming patterns in JavaScript.
+
+function addTowValueNew(a,b){
+  return a + b
+}
+
+function applyOperation(num1 , num2, operation1){
+  return operation1(num1,num2)
+}
+
+let res = applyOperation(3,5, addTowValueNew);
+console.log(res,"new result")
+
+function factorial(num){
+  if(num === 0){
+      return 1
+  }else{
+      return num * factorial(num - 1);
+  }
+}
+console.log(factorial(4))
+
+function fb(num){
+  if(num < 1) return num
+  let a = 0,b = 1;
+  for(let i = 2; i <=num ; i++){
+      const temp = a + b
+      a = b
+      b = temp
+  }
+  return b
+}
+let ress = fb(10)
+console.log(ress)
+
+function fecthDate(callback){
+  setTimeout(function(){
+      const data = "some data"
+      callback(data)
+  },2000)
+}
+function passData(data){
+  console.log("data receivd" + " " +data)
+}
+
+fecthDate(passData)
+
+// Write a JavaScript program to find the greatest common divisor (GCD) of two positive numbers using recursion.  in js
+
+function gdc(a,b){
+  console.log(a,b)
+  if(b == 0){
+    return a
+  }else{
+    return gdc(b, a % b)
+  }
+
+}
+console.log(gdc(48,18))
