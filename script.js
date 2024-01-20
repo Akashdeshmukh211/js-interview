@@ -957,7 +957,6 @@ fecthDate(passData)
 // Write a JavaScript program to find the greatest common divisor (GCD) of two positive numbers using recursion.  in js
 
 function gdc(a,b){
-  console.log(a,b)
   if(b == 0){
     return a
   }else{
@@ -966,3 +965,42 @@ function gdc(a,b){
 
 }
 console.log(gdc(48,18))
+function rangInt(a,b){
+  console.log(a,b)
+  let array = []
+  let c = a + 1
+  for(let i = c; i < b; i++){
+      if(i < b){
+          array.push(i)
+      }
+  }
+  return array
+}
+console.log(rangInt(2,9))
+
+var range = function(start_num, end_num) 
+{
+  
+  if (end_num - start_num === 2) 
+  {
+   
+    return [start_num + 1];
+  } 
+  else 
+  {
+    let list = range(start_num, end_num - 1);
+    list.push(end_num - 1);
+    return list;
+  }
+};
+
+console.log(range(2,5));
+function findFactorial(num) {
+  let factorial = 1
+  for (let i = num; i > 0; i--) {
+    factorial *= i
+  }
+  return factorial
+}
+
+findFactorial(5) // 120
