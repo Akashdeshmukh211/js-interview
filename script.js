@@ -1004,3 +1004,160 @@ function findFactorial(num) {
 }
 
 findFactorial(5) // 120
+
+
+
+// All string Methods
+
+let str = "demoString"
+
+
+
+let str1 = "Welcome to GeesforGeeks";
+let str2 = new String("Welcome Geeks");
+ 
+console.log(str1);
+console.log(str2);
+// JavaScript String length Property
+
+function getLength(str) {
+  return str.length()
+}
+
+console.log(getLength(str2))
+
+// Method 1: JavaScript slice(startIndex, endIndex) Method
+// This method extracts a part of the string based on the given stating-index and ending-index and returns a new string.
+
+function sliceString(str,a,b){
+    return str.slice(a,b)
+}
+console.log(sliceString(str1,0,7))
+
+// Method 2: JavaScript substring(startIndex, endIndex) Method
+// This method returns the part of the given string from the start index to the end index. Indexing starts from zero (0).
+
+function subString(str,a,b){
+    return str.substring(a,b)
+}
+console.log(sliceString(str1,0,7))
+
+// Method 3: JavaScript substr(start, length) Method
+// This method returns the specified number of characters from the specified index from the given string. 
+// It basically extracts a part of the original string.
+
+
+function subString2(str,a,b){
+  return str.substr(a,b)
+}
+console.log(sliceString(str1,0,7))
+
+// Method 4: JavaScript replace(replaceValue, replaceWithValue)
+// This method replaces a part of the given string with another string or a regular expression.
+// The original string will remain unchanged.
+
+function replaceString(str,replaseValue,replaceWithValue) {
+   return str.replace(replaseValue,replaceWithValue)
+}
+
+console.log(str1,'to','for')
+
+// Method 5: JavaScript replaceAll(regexp | substr , newSubstr | function)
+// This method returns a new string after replacing all the matches of a string with a specified string or a regular expression. 
+// The original string is left unchanged after this operation.
+
+let str3 = "Mind, Power, Power,  Soul";
+let part = str3.replaceAll("Power", "Space");
+console.log(part);
+
+// Method 6: JavaScript toUpperCase(stringVariable)
+// This method converts all the characters present in the String to upper case and returns a new String with all characters in upper case. 
+// This method accepts single parameter stringVariable string that you want to convert in upper case.
+
+function returnUpstring(str){
+  return str.toUpperCase()
+}
+
+console.log(returnUpstring(str1))
+
+// Method 7: JavaScript toLowerCase(stringVariable)
+// This method converts all the characters present in the so lowercase and returns a new string with all the characters in lowercase.
+
+function returnLowerCase(str) {
+   return str.toLowerCase();
+}
+console.log(returnLowerCase(str1))
+
+// Method 8: JavaScript concat(objectOfString) Method
+// This method combines the text of two strings and returns a new combined or joined string. 
+// To concatenate two strings, we use the concat() method on one object of string and send another object of string as a parameter. 
+// This method accepts one argument. The variable contains text in double quotes or single quotes.
+
+function stinnConcat(str1,str2){
+  return str1.concat(str2)
+}
+console.log(str1,str2)
+
+
+// Method 9: JavaScript trim() Method
+// This method is used to remove either white spaces from the given string. 
+// This method returns a new string with removed white spaces. 
+// This method is called on a String object. This method doesn’t accept any parameter.
+
+function stringTrim(str){
+  return str.trim();
+}
+
+console.log(str1)
+
+// All Array methods
+const array123 = [1,2,3,4]
+console.log(array.length)
+console.log(array.toString())
+console.log(array.at(3))
+console.log(array.join("."))
+array.push(2)
+console.log(array)
+let popvalue = array.pop()
+console.log(popvalue)
+let shiftValue = array.shift();
+console.log(shiftValue)
+array.unshift("unshitValue")
+console.log(array)
+delete array[1]
+console.log(array)
+let array2 = ["a","b","c","d"]
+let concatArray = array.concat(array2)
+console.log(concatArray,"con")
+console.log(concatArray.copyWithin(1,2))
+let flatArray = [1,[1,2],['a','b']]
+console.log(flatArray.flat())
+console.log(concatArray.splice(1,4))
+// console.log(concatArray.toSplice(1,4))
+console.log(concatArray.slice('1'))
+console.log(concatArray.indexOf('d'))
+console.log(concatArray.lastIndexOf("d"))
+console.log(concatArray.includes("c"))
+console.log(concatArray.includes("z"))
+console.log(concatArray.find((value, index, array)=>{
+    return value == "c"
+}))
+console.log(concatArray.findIndex((value, index, array)=>{
+    return value == "z"
+}))
+let value12 = flatArray.findLast((value, i , a)=>{
+    return value < 4
+})
+let value2 = flatArray.findLastIndex((value, i , a)=>{
+    return value < 4
+})
+console.log(value);
+
+const fruits12 = ["Apple", "Orange", "Apple", "Mango"];
+console.log(fruits.sort())
+
+const numBer = [1,3,4,7,2,9,12,753,34,21,33]
+console.log(numBer.sort())
+console.log(numBer.sort((a,b)=> a - b))
+console.log(numBer.sort((a,b)=> b - a))
+console.log(fruits.reverse())
