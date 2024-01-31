@@ -591,7 +591,7 @@ const alice = new Person('Alice', 30);
 // ES6, also known as ECMAScript 2015, introduced a wide range of new features and improvements to JavaScript. Some of the notable features include:
 
 // 1. **Arrow Functions**: Concise syntax for writing functions.
-   
+
 // 2. **let and const**: Block-scoped variables (`let`) and constants (`const`) which offer more predictable scope behavior.
 
 // 3. **Template Literals**: Using backticks (`) to create multi-line strings and interpolate variables within strings.
@@ -623,3 +623,24 @@ const alice = new Person('Alice', 30);
 // 16. **Object.assign()**: Merges objects by copying the values of all enumerable own properties from one or more source objects to a target object.
 
 // These are just some of the prominent features introduced in ES6. Subsequent versions of ECMAScript have continued to bring additional improvements and new functionalities to JavaScript.
+
+// Find first unique character in give string
+
+
+function firstUniqueCharacter(str) {
+    const charCount = new Map()
+
+    for (const char of str) {
+        charCount.set(char, (charCount.get(char) || 0) + 1)
+    }
+    for (const char of str) {
+        if (charCount.get(char) === 1) {
+            return char
+        }
+    }
+    return null
+}
+
+const inputStrin = "leetcode"
+console.log(inputStrin)
+
