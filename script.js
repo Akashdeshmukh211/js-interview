@@ -1178,3 +1178,21 @@ console.log(numBer.sort())
 console.log(numBer.sort((a, b) => a - b))
 console.log(numBer.sort((a, b) => b - a))
 console.log(fruits.reverse())
+
+function binarySearch(arr, target){
+  let left = 0;
+  let right = arr.length - 1
+  const sortArr = arr.sort((a, b) => a - b)
+  while (left <= right){
+    let mid = Math.floor((left + right) / 2)
+    let midElement = sortArr[mid]
+    if(midElement === target){
+      return mid
+    }else if(midElement < target){
+      left = mid + 1
+    }else{
+      right = mid - 1
+    }
+  }
+  return -1
+}
